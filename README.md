@@ -21,10 +21,10 @@ Young Hwi Kim, Seonghyeon Nam, Seon Joo Kim
 ## Training
 
 ### Input Features
-We provide the kinetics pre-trained feature of THUMOS'14 dataset. The extracted features can be downloaded from [here](). Files should be located in 'data/'.  
+We provide the kinetics pre-trained feature of THUMOS'14 dataset. The extracted features can be downloaded from [here](https://drive.google.com/file/d/1GwQjMq0Eyc3XWljeeaSqwbTal5y76Xwy/view?usp=sharing). Files should be located in 'data/'.  
 
 ### Trained Model
-The trained models can be downloaded from [here](). Files should be located in 'checkpoints/'.
+The trained models can be downloaded from [here](https://drive.google.com/file/d/1WeHyFq1v-Rch9qht_ACF2TLXGKizR_FI/view?usp=sharing). Files should be located in 'checkpoints/'.
 
 ### Training Model
 ```
