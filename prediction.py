@@ -105,9 +105,7 @@ if(mode=='test'):
                                 y_pred = nn.Softmax(dim=1)(y_pred)
                                 y_pred = y_pred.cpu().numpy()
                                 weight = weight.cpu().numpy()
-                                #if(weight[0,0]>0.01 and idx[0]+seg_idx<duration):
-                                #    print(idx[0]+seg_idx)
-                                #    print(weight)
+                                
                                 for batch in range(0, y_pred.shape[0]):
                                     if(idx[batch]+seg_idx <duration):
                                         dset_pred[idx[batch]+seg_idx,:]+=y_pred[batch,:] 

@@ -15,11 +15,7 @@ class model(nn.Module):
         self.attention1 = nn.Linear(feature_len, int(feature_len/4), bias=False)
         self.attention2 = nn.Linear(int(feature_len/4), 2, bias=False)
         
-        self.avgpool = nn.AvgPool3d((1,7,7), stride=1)
-        self.maxpool = nn.MaxPool3d((3,3,3), stride=(1,2,2), padding=(1,1,1))
-        self.finalavg = nn.AdaptiveAvgPool2d((1,label_num))
         self.relu = nn.ReLU()
-        self.tanh = nn.Tanh()
         self.softmax = nn.Softmax(dim=-1)        
     
     def decoder_forward(self, x,h):
