@@ -29,10 +29,8 @@ mode = 'train'
 batch_size=32
 frame_interval=5
 frame_length=32
-gen_feature_len = 12
 
 workers=0
-feature_size=2048
 label_num = 21
 eval_after_epoch = 50
 num_epochs=10000000
@@ -45,9 +43,12 @@ load_dir=None
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--gen_feature_len', type=int, default=12,
                     help='length of generated feature')
+parser.add_argument('--feature_size', type=int, default=2048,
+                    help='channel size of input feature')
 
 args = parser.parse_args()
 gen_feature_len=args.gen_feature_len
+feature_size=args.feature_size
 print(gen_feature_len)
 
 start_epoch=0

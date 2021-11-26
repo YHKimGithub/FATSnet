@@ -9,6 +9,7 @@ import os
 import os.path
 import h5py
 import numpy as np
+import argparse
 
 from thumos_dataset_precalc_feature import thumos_dataset_eval
 from model import model
@@ -21,10 +22,7 @@ frame_length=32
 gen_feature_len = 12
 
 workers=0
-feature_size=2048
 label_num = 21
-
-infer_steps=4
 
 feature_rgb_dir_test='data/rgb_feature_test_interval5.h5'
 feature_flow_dir_test='data/flow_feature_test_interval5.h5'
@@ -34,7 +32,18 @@ label_videolevel_test = 'data/test_video_level_label.txt'
 outfile_path='prediction.h5'
 
 load_dir=None
-load_dir='./checkpoints/ckp-genlen12-ep205-best.pt'
+load_dir='./checkpoints/ckp-genlen8-ep256-best.pt'
+
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('--infer_steps', type=int, default=4,
+                    help='number of multiple inference')
+parser.add_argument('--feature_size', type=int, default=2048,
+                    help='channel size of input feature')
+
+args = parser.parse_args()
+feature_size=args.feature_size
+infer_steps=args.infer_steps
+print(infer_steps)
 
 model = model(feature_size, label_num)
 model.cuda(gpu_id)
@@ -43,7 +52,7 @@ if(load_dir):
     checkpoint = torch.load(load_dir)
     model.load_state_dict(checkpoint['model'])
     print("loaded checkpoint %s" % (load_dir))
-
+    
 if(mode=='test'):
     outfile = h5py.File(outfile_path, 'w')
     
