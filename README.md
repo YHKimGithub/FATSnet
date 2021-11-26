@@ -21,24 +21,40 @@ Young Hwi Kim, Seonghyeon Nam, Seon Joo Kim
 ## Training
 
 ### Input Features
-We provide the kinetics pre-trained feature of THUMOS'14 dataset. The extracted features can be downloaded from [here](https://drive.google.com/file/d/1GwQjMq0Eyc3XWljeeaSqwbTal5y76Xwy/view?usp=sharing). Files should be located in 'data/'.  
+We provide the Kinetics pre-trained feature of THUMOS'14 dataset. The extracted features can be downloaded from [here](https://drive.google.com/file/d/1GwQjMq0Eyc3XWljeeaSqwbTal5y76Xwy/view?usp=sharing). Files should be located in 'data/'.  
+The feature that is pre-trained on Activitynet can be downloaded from [here](https://drive.google.com/file/d/1trAN8g-xRyIIFMXEsqmgowD2CJcEGY10/view?usp=sharing).
 
 ### Trained Model
-The trained models can be downloaded from [here](https://drive.google.com/file/d/1WeHyFq1v-Rch9qht_ACF2TLXGKizR_FI/view?usp=sharing). Files should be located in 'checkpoints/'.
+The trained models that used Kinetics pre-trained feature can be downloaded from [here](https://drive.google.com/file/d/1WeHyFq1v-Rch9qht_ACF2TLXGKizR_FI/view?usp=sharing). Files should be located in 'checkpoints/'. 
+The Activitynet version can be downloaded from [here](https://drive.google.com/file/d/1wr-NXBW5LVNQ0WdkRmzUK7XPq_Y23VoV/view?usp=sharing).
 
 ### Training Model
+For Kinetics pre-trained input feature,
 ```
 python train.py --gen_feature_len=12
 ```
+For Activitynet pre-trained input feature,
+```
+python train.py --gen_feature_len=8 --feature_size=3072
+```
+
 
 ## Testing
+For Kinetics pre-trainedd input feature,
 ```
 python prediction.py
 python eval_map.py
 ```
+For Activitynet pre-trained input feature,
+```
+python prediction.py --feature_size=3072
+python eval_map.py
+```
+
 
 | Dataset | Feature | mAP | 
 |:--------------:|:--------------:|:--------------:| 
+| THUMOS'14 | TwoStream-Anet | 51.6 |
 | THUMOS'14 | TwoStream-Kinetics | 59.0 |
 
 
