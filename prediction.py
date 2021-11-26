@@ -32,7 +32,7 @@ label_videolevel_test = 'data/test_video_level_label.txt'
 outfile_path='prediction.h5'
 
 load_dir=None
-load_dir='./checkpoints/ckp-genlen8-ep256-best.pt'
+load_dir='./checkpoints/ckp-genlen12-ep205-best.pt'
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--infer_steps', type=int, default=4,
