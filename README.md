@@ -25,8 +25,8 @@ We provide the Kinetics pre-trained feature of THUMOS'14 dataset. The extracted 
 The feature that is pre-trained on Activitynet can be downloaded from [here](https://drive.google.com/file/d/1trAN8g-xRyIIFMXEsqmgowD2CJcEGY10/view?usp=sharing).
 
 ### Trained Model
-The trained models that used Kinetics pre-trained feature can be downloaded from [here](https://drive.google.com/file/d/1WeHyFq1v-Rch9qht_ACF2TLXGKizR_FI/view?usp=sharing). Files should be located in 'checkpoints/'. 
-The Activitynet version can be downloaded from [here](https://drive.google.com/file/d/1wr-NXBW5LVNQ0WdkRmzUK7XPq_Y23VoV/view?usp=sharing).
+The trained models that used Kinetics pre-trained feature can be downloaded from [here](https://yonsei-my.sharepoint.com/:u:/g/personal/younghwikim_o365_yonsei_ac_kr/Eb07Uoe0FqdPn_BFZV4TsMoBeVCrvtKTCkM7ipJm-37bxA?e=ZdjbUU). Files should be located in 'checkpoints/'. 
+The Activitynet version can be downloaded from [here](https://yonsei-my.sharepoint.com/:u:/g/personal/younghwikim_o365_yonsei_ac_kr/EcD7ts2emIxPk-JztT1gMEMBQpRpPx6P8ezaEFL2iQr9UQ?e=JY3go1).
 
 ### Training Model
 For Kinetics pre-trained input feature,
